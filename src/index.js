@@ -12,19 +12,13 @@ import {
   BrowserRouter
 } from 'react-router-dom'
 
+import {browserHistory} from 'react-router';
+
 
 class FirstPage extends Component {
     render(){
        return(
-          <Button title="page 2"
-                style={{
-                  width:200,
-                  backgroundColor : "#CCC",
-                  height : 30
-                }}
-                 onClick = { ()=> { window.location.href = "./secondpage"}}
-                label = "Go to Second Page"
-              />
+         <Link to={'/secondpage'}>link to second page</Link>
        );
     }
 }
@@ -33,17 +27,7 @@ class FirstPage extends Component {
 class SecondPage extends Component {
     render(){
         return (
-            <div>
-              <Button title="page 1"
-                style={{
-                  width:200,
-                  backgroundColor : "#CCC",
-                  height : 30
-                }}
-                onClick = { ()=> { window.location.href = "./"}}
-                label = "Go to First Page"
-              />
-            </div>
+             <Link to={'/'}>link to first page</Link>
         );
     }
 }
